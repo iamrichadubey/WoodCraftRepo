@@ -9,13 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
   <div class="app">
     <!-- Persistent navigation switches between the studio, saved work, and catalog views. -->
     <aside class="sidebar" aria-label="Main navigation">
-      <a class="brand" href="/" aria-label="WoodCraft Studio home">
+      <a class="brand" href="./" aria-label="WoodCraft Studio home">
         <svg class="brand-logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="6" y="38" width="36" height="2.2" rx="1.1" fill="#D4939D"/>
           <path d="M10 38V24C10 16.27 16.27 10 24 10C31.73 10 38 16.27 38 24V38" stroke="#D4939D" stroke-width="2" stroke-linecap="round"/>
@@ -53,7 +53,7 @@
       <div class="content">
         <!-- Customization form and selected design preview. -->
         <section class="intro" id="studio-intro" aria-labelledby="page-title">
-          <div><div class="eyebrow"><span class="eyebrow-dot"></span>Made for your home</div><h1 id="page-title">Furniture that fits<br>your home & budget.</h1><p class="intro-copy">Choose what you need, set your size and finish, and explore options with indicative prices in rupees.</p></div>
+          <div><div class="eyebrow"><span class="eyebrow-dot"></span>Made for your home</div><h1 id="page-title">Furniture that fits<br>your home & budget.</h1><p class="intro-copy">Choose what you need, set your size and finish, and explore options with indicative prices in rupees.</p><p class="static-demo-notice" id="static-demo-notice" hidden>Static demo: previews and the standard catalog work here. Saving ideas and projects is available in the full app.</p></div>
           <div class="project-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l8-4v18m6 0V11l-6-4"/><path d="M9 9v.01M9 13v.01M9 17v.01M16 12v.01M16 16v.01"/></svg>Made to measure <span aria-hidden="true">·</span> Prices in ₹</div>
         </section>
         <section class="studio-grid" id="studio-grid" aria-label="Furniture design workspace">
@@ -120,8 +120,9 @@
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span id="toast-message"></span></div>
   <!-- Load shared data and API helpers before the page controller. -->
-  <script src="/js/catalog.js" defer></script>
-  <script src="/js/api.js" defer></script>
-  <script src="/js/app.js" defer></script>
+  <script src="js/runtime-config.js" defer></script>
+  <script src="js/catalog.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

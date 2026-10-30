@@ -1,5 +1,6 @@
 const { furnitureTypes, standardFurniture, colorNames, formatINR, formatRange, imageUrl } = window.WoodCraftCatalog;
 const woodCraftApi = window.WoodCraftApi;
+const staticDemo = window.WoodCraftConfig?.staticDemo === true;
 // This list is the current studio view; selecting another furniture type replaces its ideas.
 const concepts = furnitureTypes.bed.names.map((name, index) => ({
   title: `${name}, option ${index + 1}`,
@@ -476,6 +477,7 @@ document.querySelectorAll(".nav-item").forEach((item) => {
   item.addEventListener("click", () => {
     document.querySelectorAll(".nav-item").forEach((nav) => nav.classList.toggle("active", nav === item));
     const view = item.dataset.view;
+    if (staticDemo && (view === "projects" || view === "saved")) return;
     const names = { studio: "Design studio", projects: "My projects", saved: "Saved ideas", discover: "Discover" };
     $("#breadcrumb-current").textContent = names[view];
     const showProjects = view === "projects";
@@ -501,8 +503,15 @@ updateProductFields();
 renderDiscover();
 drawConcepts();
 selectConcept(0);
-loadSavedDesigns();
-loadProjects().catch((error) => {
-  console.error("Could not load projects.", error);
-  showToast(error.message || "Projects could not be loaded.");
-});
+if (staticDemo) {
+  document.body.classList.add("static-demo");
+  $("#static-demo-notice").hidden = false;
+  document.querySelectorAll('[data-view="projects"], [data-view="saved"], #project-button, #favorite-button')
+    .forEach((element) => { element.hidden = true; });
+} else {
+  loadSavedDesigns();
+  loadProjects().catch((error) => {
+    console.error("Could not load projects.", error);
+    showToast(error.message || "Projects could not be loaded.");
+  });
+}

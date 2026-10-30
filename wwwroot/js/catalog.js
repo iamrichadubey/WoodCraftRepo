@@ -27,10 +27,10 @@ const furnitureTypes = {
     shapes: ["Wall-mounted", "Floor-standing", "Corner-fit", "Arched"],
     changes: ["Jaali detailing", "Bell and drawer storage", "Warm LED lighting", "Wall-mounted design"],
     names: ["Compact home mandir", "Made-to-fit mandir", "A more detailed mandir"],
-    images: ["/Images/Gemini_Generated_Image_6bdtpm6bdtpm6bdt.png", "/Images/Gemini_Generated_Image_fmvy1kfmvy1kfmvy-2.png", "/Images/Gemini_Generated_Image_fmvy1kfmvy1kfmvy.png"],
+    images: ["Images/Gemini_Generated_Image_6bdtpm6bdtpm6bdt.png", "Images/Gemini_Generated_Image_fmvy1kfmvy1kfmvy-2.png", "Images/Gemini_Generated_Image_fmvy1kfmvy1kfmvy.png"],
     imagesByStyle: {
-      "Modern Indian": "/Images/Gemini_Generated_Image_6bdtpm6bdtpm6bdt.png",
-      "Minimal": "/Images/Gemini_Generated_Image_fmvy1kfmvy1kfmvy-2.png"
+      "Modern Indian": "Images/Gemini_Generated_Image_6bdtpm6bdtpm6bdt.png",
+      "Minimal": "Images/Gemini_Generated_Image_fmvy1kfmvy1kfmvy-2.png"
     }
   }
 };
@@ -52,7 +52,9 @@ const formatINR = (amount) => new Intl.NumberFormat("en-IN", { style: "currency"
 const formatRange = (low, high) => `${formatINR(low)}–${formatINR(high)}`;
 const imageUrl = (image, width = 720) => /^(https?:|\/|data:)/.test(image)
   ? image
-  : `https://images.unsplash.com/${image}?auto=format&fit=crop&w=${width}&q=83`;
+  : image.startsWith("Images/")
+    ? image
+    : `https://images.unsplash.com/${image}?auto=format&fit=crop&w=${width}&q=83`;
 
 window.WoodCraftCatalog = Object.freeze({
   furnitureTypes,

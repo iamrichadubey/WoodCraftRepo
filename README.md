@@ -26,6 +26,10 @@ dotnet run
 
 Open the local URL printed by ASP.NET Core. Choose a bed, cupboard / wardrobe, office furniture, or home mandir; set its shape, dimensions in centimetres, colour, design changes, and budget in Indian rupees. `POST /api/designs/generate` returns three options with indicative INR price ranges and budget-fit status. **Save to project** stores the selected setup in **My projects**, where it remains available after restarting the app. **Save idea** separately adds or removes it from favorites. `GET /api/projects` lists projects, and `GET /api/health` reports the service status.
 
+## GitHub Pages demo
+
+The `static-pages` branch publishes a static demo at <https://iamrichadubey.github.io/WoodCraftRepo/> through GitHub Actions. It supports browser-based design previews and the Discover catalog. GitHub Pages cannot run the ASP.NET API or SQLite database, so project and favorite saving are available only in the full app.
+
 Use **Discover** to browse the standard display collection (three designs each for beds, cupboards, office furniture, and home mandirs) without entering customization details. Each design shows its furniture type's standard base price; confirm current display availability and final pricing with Balaji Enterprises.
 
 The database is created as `woodcraft.db` in the project directory on first run. Remove projects from **My projects** or use `DELETE /api/projects/{id}`. Click **Saved** again on a saved setup to remove it; the `DELETE /api/designs/saved/{id}` endpoint is also available.

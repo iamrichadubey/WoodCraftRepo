@@ -1,6 +1,10 @@
 (() => {
 // Keep URL and HTTP details out of the page's rendering and interaction code.
 async function request(path, options) {
+  if (window.WoodCraftConfig?.staticDemo) {
+    throw new Error("Server features are unavailable in the GitHub Pages demo.");
+  }
+
   const response = await fetch(path, options);
   // DELETE endpoints return 204 and therefore have no JSON response body.
   const result = response.status === 204 ? null : await response.json();
