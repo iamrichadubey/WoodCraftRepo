@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#232946">
+  <meta name="description" content="Dream up a more personal home. Design furniture with WoodCraft.">
+  <title>WoodCraft Studio — furniture, imagined</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Persistent navigation switches between the studio, saved work, and catalog views. -->
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="WoodCraft Studio home">
+        <svg class="brand-logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="6" y="38" width="36" height="2.2" rx="1.1" fill="#D4939D"/>
+          <path d="M10 38V24C10 16.27 16.27 10 24 10C31.73 10 38 16.27 38 24V38" stroke="#D4939D" stroke-width="2" stroke-linecap="round"/>
+          <path d="M15 38V25C15 20.03 19.03 16 24 16C28.97 16 33 20.03 33 25V38" stroke="#D4939D" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M19 23V30C19 32.76 21.24 35 24 35C26.76 35 29 32.76 29 30V23" stroke="#D4939D" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="24" y1="23" x2="24" y2="31" stroke="#D4939D" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="24" cy="7.5" r="1.5" fill="#D4939D"/>
+          <path d="M24 2.5L25.5 6H22.5L24 2.5Z" fill="#D4939D"/>
+        </svg>
+        <span class="brand-wordmark">
+          <span class="brand-name">WoodCraft Studio</span>
+        </span>
+      </a>
+      <div class="nav-label">Balaji Enterprises</div>
+      <nav class="nav">
+        <button class="nav-item active" type="button" data-view="studio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10 8-6 8 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 20v-7h6v7"/></svg><span>Design studio</span></button>
+        <button class="nav-item" type="button" data-view="projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7.5 12 3l8 4.5-8 4.5z"/><path d="m4 12 8 4.5 8-4.5M4 16.5l8 4.5 8-4.5"/></svg><span>My projects</span><span class="nav-count" id="project-count">0</span></button>
+        <button class="nav-item" type="button" data-view="saved"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg><span>Saved ideas</span><span class="nav-count" id="saved-count">0</span></button>
+        <button class="nav-item" type="button" data-view="discover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.4-4.4M8 11l2-2 2 4 2-2"/></svg><span>Discover</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <a class="help-link" href="mailto:hello@WoodCraft.design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3m.1 4h.01"/></svg>Help & inspiration</a>
+        <div class="profile"><div class="avatar" aria-hidden="true">R</div><div><div class="profile-name">Richa Dubey</div><div class="profile-plan">Creative plan</div></div></div>
+      </div>
+    </aside>
+    <main class="main" id="studio">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Customise</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg><strong id="breadcrumb-current">Design studio</strong></div>
+        <div class="top-actions">
+          <button class="icon-button" id="help-button" type="button" aria-label="Get design tips" title="Get design tips"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3m.1 4h.01"/></svg></button>
+          <button class="icon-button" id="notifications-button" type="button" aria-label="Notifications" title="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-8 12h4"/></svg><span class="notification-dot" aria-hidden="true"></span></button>
+          <button class="new-project" id="new-project" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New project</button>
+        </div>
+      </header>
+      <div class="content">
+        <!-- Customization form and selected design preview. -->
+        <section class="intro" id="studio-intro" aria-labelledby="page-title">
+          <div><div class="eyebrow"><span class="eyebrow-dot"></span>Made for your home</div><h1 id="page-title">Furniture that fits<br>your home & budget.</h1><p class="intro-copy">Choose what you need, set your size and finish, and explore options with indicative prices in rupees.</p></div>
+          <div class="project-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l8-4v18m6 0V11l-6-4"/><path d="M9 9v.01M9 13v.01M9 17v.01M16 12v.01M16 16v.01"/></svg>Made to measure <span aria-hidden="true">·</span> Prices in ₹</div>
+        </section>
+        <section class="studio-grid" id="studio-grid" aria-label="Furniture design workspace">
+          <form class="panel form-panel" id="design-form">
+            <div class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3z"/><path d="m19 14 1.2 2.8L23 18l-2.8 1.2L19 22l-1.2-2.8L15 18l2.8-1.2L19 14z"/></svg></span>Customise your furniture</div>
+            <label class="field-label" for="prompt">What would you like to change?<span class="field-note">Optional details</span></label>
+            <textarea id="prompt" maxlength="500" placeholder="Extra storage, built-in drawers, cable routing, a particular look…"></textarea>
+            <div class="form-row">
+              <div><label class="field-label" for="item">Furniture item</label><div class="select-wrap"><select id="item" name="item"><option value="bed">Bed</option><option value="cupboard">Cupboard / wardrobe</option><option value="office">Office furniture</option><option value="mandir">Home mandir</option></select><svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></div></div>
+              <div><label class="field-label" for="style">Design style</label><div class="select-wrap"><select id="style" name="style"><option>Modern Indian</option><option>Contemporary</option><option>Minimal</option><option>Traditional</option><option>Scandinavian</option><option>Japandi</option></select><svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></div></div>
+            </div>
+            <div class="form-row">
+              <div><label class="field-label" for="shape">Shape / layout</label><div class="select-wrap"><select id="shape" name="shape"></select><svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></div></div>
+              <div><div class="field-label">Size <span class="field-note">Centimetres</span></div><div class="dimensions-row" style="margin-top:0"><input class="dimension-input" id="width" type="number" min="30" max="500" value="160" aria-label="Width in centimetres"><input class="dimension-input" id="depth" type="number" min="30" max="500" value="200" aria-label="Depth in centimetres"><input class="dimension-input" id="height" type="number" min="30" max="500" value="110" aria-label="Height in centimetres"></div><div class="field-note" style="display:flex;justify-content:space-between;margin-top:4px"><span>Width</span><span>Depth</span><span>Height</span></div></div>
+            </div>
+            <div style="margin-top:15px"><div class="field-label">Design changes <span class="field-note">Choose what matters</span></div><div class="change-grid" id="change-options"></div></div>
+            <div style="margin-top:15px"><div class="field-label">Colour & finish <span class="field-note">Pick a finish</span></div><div class="materials" role="group" aria-label="Furniture colour and finish"><button class="swatch" type="button" data-color="sheesham" aria-label="Sheesham" aria-pressed="false" title="Sheesham"></button><button class="swatch" type="button" data-color="teak" aria-label="Teak" aria-pressed="true" title="Teak"></button><button class="swatch" type="button" data-color="walnut" aria-label="Walnut" aria-pressed="false" title="Walnut"></button><button class="swatch" type="button" data-color="ivory" aria-label="Ivory" aria-pressed="false" title="Ivory"></button><button class="swatch" type="button" data-color="sage" aria-label="Sage green" aria-pressed="false" title="Sage green"></button><span class="material-name" id="color-name">Teak</span></div></div>
+            <div class="budget-row"><label class="field-label" for="budget" style="margin:0">Your budget</label><output class="budget-value" id="budget-display" for="budget">₹35,000</output></div>
+            <input class="budget-range" id="budget" type="range" min="5000" max="300000" step="5000" value="35000" aria-label="Budget in Indian rupees">
+            <div class="budget-hint">Indicative estimates only; final costs depend on materials and local workmanship.</div>
+            <button class="generate" id="generate-button" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3z"/><path d="m19 14 1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"/></svg><span>Explore options</span></button>
+          </form>
+          <div class="result-column">
+            <section class="panel result-panel" aria-labelledby="result-name">
+              <div class="result-topline"><div><div class="result-name" id="result-name">Sunday Light, No. 01</div><div class="result-subtitle" id="result-subtitle">An idea for your living room</div></div><div class="result-actions"><button class="result-action" id="project-button" type="button" aria-label="Save selected design to projects" title="Save to projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 10v6m-3-3h6"/></svg><span class="action-label">Save to project</span></button><button class="result-action" id="favorite-button" type="button" aria-label="Add design to favorites" title="Add to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/></svg><span class="action-label" id="favorite-label">Save idea</span></button><button class="result-action" id="share-button" type="button" aria-label="Copy design link" title="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4m-6.8 7 6.8 4"/></svg><span class="action-label">Share</span></button><button class="result-action" id="download-button" type="button" aria-label="Download design image" title="Download image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5 5 5 5-5m-5 5V3"/></svg><span class="action-label">Export</span></button></div></div>
+              <div class="hero-image-wrap"><img class="hero-image" id="hero-image" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Warm, contemporary Indian-inspired bedroom with a made bed"><div class="image-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3z"/></svg><span id="image-caption">Customisation reference</span></div><div class="image-count" id="image-count">01 / 03</div></div>
+              <div class="price-row"><span class="price-label">Indicative build estimate</span><strong class="price-value" id="estimate">₹24,000–₹30,000</strong><span class="budget-status" id="budget-status">Within budget</span></div>
+              <div class="result-foot"><span class="result-foot-label">Thoughtful details</span><div class="tag-list" id="tag-list"><span class="tag">Natural linen</span><span class="tag">Solid oak</span><span class="tag">Soft edges</span></div></div>
+            </section>
+            <div class="concept-heading"><h2 id="concept-heading">A few ways to take it</h2><span id="concept-count">3 ideas</span></div>
+            <section class="concept-grid" id="concept-grid" aria-label="Alternative furniture concepts"></section>
+            <div class="tips-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a7 7 0 0 0-4 12.7V19h8v-3.3A7 7 0 0 0 12 3z"/><path d="M9 22h6m-5-7-1-4 3 2 2-3v5"/></svg><span>Good to know: Natural materials tend to shift beautifully with the light in your room.</span></div>
+          </div>
+        </section>
+        <!-- These views reuse the app shell and are toggled by the navigation buttons. -->
+        <section class="projects-view" id="projects-view" aria-labelledby="projects-title" hidden>
+          <div class="projects-heading">
+            <div><h1 id="projects-title">My projects</h1><p class="intro-copy">Your selected furniture designs, saved for later.</p></div>
+            <button class="new-project" id="projects-new-project" type="button">New project</button>
+          </div>
+          <div class="project-list" id="project-list" aria-live="polite"></div>
+        </section>
+        <section class="discover-view" id="discover-view" aria-labelledby="discover-title" hidden>
+          <div class="discover-heading">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-dot"></span>Standard collection</div>
+              <h1 id="discover-title">Furniture on display</h1>
+              <p class="intro-copy">Browse our standard furniture designs if you already know what you need. No customisation required.</p>
+            </div>
+            <span class="discover-count" id="discover-count"></span>
+          </div>
+          <div class="discover-filters" id="discover-filters" role="group" aria-label="Filter standard furniture by type">
+            <button class="discover-filter active" type="button" data-category="all" aria-pressed="true">All furniture</button>
+            <button class="discover-filter" type="button" data-category="bed" aria-pressed="false">Beds</button>
+            <button class="discover-filter" type="button" data-category="cupboard" aria-pressed="false">Cupboards</button>
+            <button class="discover-filter" type="button" data-category="office" aria-pressed="false">Office</button>
+            <button class="discover-filter" type="button" data-category="mandir" aria-pressed="false">Mandirs</button>
+          </div>
+          <div class="discover-grid" id="discover-grid" aria-live="polite"></div>
+          <p class="discover-note">Prices shown are indicative estimates for standard designs, not confirmed quotes or live stock availability. Please contact Balaji Enterprises to confirm current display and pricing.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span id="toast-message"></span></div>
+  <!-- Load shared data and API helpers before the page controller. -->
+  <script src="/js/catalog.js" defer></script>
+  <script src="/js/api.js" defer></script>
+  <script src="/js/app.js" defer></script>
+</body>
+</html>
