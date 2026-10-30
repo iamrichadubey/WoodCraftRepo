@@ -1,0 +1,4 @@
+bin/
+obj/
+woodcraft.db
+.DS_Store
